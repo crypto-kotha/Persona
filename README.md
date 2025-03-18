@@ -27,9 +27,9 @@ This project focuses on leveraging advanced reinforcement learning techniques to
 - **Neural Evolution**: Uses genetic algorithms to evolve better-performing agents.
 - **Extensive Logging and Visualization**: Provides detailed logs and visualizations of training metrics.
 - 
-## RainbowDQNAgent Agent Usage:
+## Usage:
 
-The `dqn_agent.py` defines the `RainbowDQNAgent` class, which implements the Rainbow DQN algorithm with various enhancements:
+`RainbowDQNAgent` class, which implements the Rainbow DQN algorithm with various enhancements:
 - **NoisyLinear**: A custom linear layer with added noise for exploration.
 - **DuelingDQN**: Extends the DQN architecture to separate value and advantage streams.
 - **PrioritizedReplayBuffer**: Manages experience replay with prioritized sampling.
