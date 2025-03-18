@@ -39,7 +39,7 @@ pip install -r requirements.txt
 
 To train an agent using the provided scripts, follow these steps:
 
-1. **Train with DQN**: Use `dqn_agent.py` to train a DQN agent.
+### 1. **Train with DQN**: Use `dqn_agent.py` to train a DQN agent.
 ```bash
 if __name__ == "__main__":
     print("\n🚀 Starting Advanced DQN Test...")
@@ -95,9 +95,7 @@ if __name__ == "__main__":
     print(f"  - Average reward (last 3 episodes): {np.mean(agent.episode_rewards[-3:]) if len(agent.episode_rewards) >= 3 else 'N/A'}")
 ```
 
-2. **Neural Evolution**: Use `neural_evolution.py` to evolve agents and optimize their performance.
-
-### Example:
+### 2. **Neural Evolution**: Use `neural_evolution.py` to evolve agents and optimize their performance.
 
 ```bash
 import torch
