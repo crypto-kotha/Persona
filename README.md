@@ -98,7 +98,7 @@ if __name__ == "__main__":
     print(f"{datetime.utcnow()} - Training process completed")
 ```
 
-## 2. **Neural Evolution**: evolve agents and mutate last RainbowDQNAgent.
+## 2. **Neural Evolution**: evolve agents and mutate last Genesis RainbowDQNAgent.
 
 ```bash
 import torch
