@@ -26,24 +26,22 @@ This project focuses on leveraging advanced reinforcement learning techniques to
 - **LSTM Integration**: Handles temporal dependencies in the input data.
 - **Neural Evolution**: Uses genetic algorithms to evolve better-performing agents.
 - **Extensive Logging and Visualization**: Provides detailed logs and visualizations of training metrics.
+- 
+## RainbowDQNAgent Agent Usage:
 
-## Installation
+The `dqn_agent.py` defines the `RainbowDQNAgent` class, which implements the Rainbow DQN algorithm with various enhancements:
+- **NoisyLinear**: A custom linear layer with added noise for exploration.
+- **DuelingDQN**: Extends the DQN architecture to separate value and advantage streams.
+- **PrioritizedReplayBuffer**: Manages experience replay with prioritized sampling.
 
-To install the required dependencies, run:
-
+### 1. **Train with DQN**:
 ```bash
-pip install -r requirements.txt
-```
+import numpy as np
+from datetime import datetime
+from dqn_agent import RainbowDQNAgent, SimpleEnv
 
-## Usage
-
-To train an agent using the provided scripts, follow these steps:
-
-### 1. **Train with DQN**: Use `dqn_agent.py` to train a DQN agent.
-```bash
-if __name__ == "__main__":
-    print("\n🚀 Starting Advanced DQN Test...")
-    
+def train_agent():
+    # Initialize environment and agent
     env = SimpleEnv(state_size=4, action_size=2)
     
     agent = RainbowDQNAgent(
@@ -93,9 +91,14 @@ if __name__ == "__main__":
     print(f"  - Training steps: {len(agent.loss_list)}")
     print(f"  - Final loss: {agent.loss_list[-1] if agent.loss_list else 'N/A'}")
     print(f"  - Average reward (last 3 episodes): {np.mean(agent.episode_rewards[-3:]) if len(agent.episode_rewards) >= 3 else 'N/A'}")
+
+if __name__ == "__main__":
+    print(f"{datetime.utcnow()} - Starting training process")
+    train_agent()
+    print(f"{datetime.utcnow()} - Training process completed")
 ```
 
-### 2. **Neural Evolution**: Use `neural_evolution.py` to evolve agents and optimize their performance.
+## 2. **Neural Evolution**: evolve agents and mutate last RainbowDQNAgent.
 
 ```bash
 import torch
@@ -145,23 +148,6 @@ def genesis(state_size, action_size):
     print(f"🏆 Final score: {total_reward}")
     return best_agent
 ```
-
-## Modules
-
-### DQN Agent
-
-The `dqn_agent.py` defines the `RainbowDQNAgent` class, which implements the Rainbow DQN algorithm with various enhancements:
-- **NoisyLinear**: A custom linear layer with added noise for exploration.
-- **DuelingDQN**: Extends the DQN architecture to separate value and advantage streams.
-- **PrioritizedReplayBuffer**: Manages experience replay with prioritized sampling.
-
-### Memory
-
-The `memory.py` file provides the implementation of the `PrioritizedReplayBuffer`, a fixed-size buffer to store experience tuples and sample them with prioritization. This buffer is used to improve learning efficiency by focusing on more significant experiences.
-
-### Neural Evolution
-
-The `neural_evolution.py` file defines the `NeuralEvolution` class, which uses genetic algorithms to evolve the parameters of the `RainbowDQNAgent`. This module allows for optimizing the agent's performance by iteratively selecting, mutating, and evaluating a population of agents.
 
 ## Contributing
 
